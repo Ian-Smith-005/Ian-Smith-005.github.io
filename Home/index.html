@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src="https://kit.fontawesome.com/f3068f95b3.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="navbar.css">
+  <title>LOGIN TO CLUBS</title>
+</head>
+<style>
+    a {
+  color: #ffffff;
+cursor: pointer;
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+.header {
+  background-color: #ff5349;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
+  width: 100%;
+    font-family: 'Exo 2', sans-serif;
+
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #ff5349;
+}
+
+.header li a {
+  display: block;
+  padding: 15px 15px;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #f4f4f4;
+color: #ff5349;
+}
+
+.header .logo-img {
+  display: block;
+  float: left;
+  font-size: 1em;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 29px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #ffffff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #ffffff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 20px 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+.social-links .fa-brands, .social-links .fa-solid{
+color: #ffffff;
+text-align: center;
+text-decoration: none;
+float: left;
+cursor: pointer;
+border: 1px solid #ff5349;
+padding-top: 20px;
+padding-bottom: 25px;
+padding-left: 10px;
+padding-right: 10px;
+
+}
+.social-links .fa-brands:hover, .social-links .fa-solid:hover{
+background-color: #ffffff;
+color: #ff5349;
+}
+.logo-img{
+float: right;
+height: 50px;
+position: absolute;
+left:10px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .logo-img{
+    top: -1px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .logo-img{
+    top: -1px;
+  }
+}
+
+
+
+
+.search-container {
+	position: relative;
+	display: inline-block;
+	margin: 4px 2px;
+	height: 50px;
+	width: 50px;
+	vertical-align: bottom;
+}
+
+.mglass {
+	display: inline-block;
+	pointer-events: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+}
+
+.searchbutton {
+	position: absolute;
+	font-size: 22px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.search:focus + .searchbutton {
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	background-color: white;
+	color: black;
+}
+
+.search {
+	position: absolute;
+	left: 49px; /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
+	background-color: white;
+	outline: none;
+	border: none;
+	padding: 0;
+	width: 0;
+	height: 100%;
+	z-index: 10;
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+}
+
+.search:focus {
+	width: 363px; /* Bar width+1px */
+	padding: 0 16px 0 0;
+}
+
+.expandright {
+	left: auto;
+	right: 49px; /* Button width-1px */
+}
+
+.expandright:focus {
+	padding: 0 0 0 16px;
+}
+</style>
+<body>
+  <div id="preloader">
+    <div id="container" class="container-preloader">
+        <div class="animation-preloader">
+          
+            <div class="txt-loading">
+                <span preloader-text="M" class="characters">M</span>
+                
+                <span preloader-text="F" class="characters">F</span>
+                
+                <span preloader-text="A" class="characters">A</span>
+                
+                <span preloader-text="C" class="characters">C</span>
+                
+                <span preloader-text="L" class="characters">L</span>
+                
+                <span preloader-text="U" class="characters">U</span>
+                
+                <span preloader-text="B" class="characters">B</span>
+
+                <span preloader-text="S" class="characters">S</span>
+            </div>
+        </div>	
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+</div>	
+<div class="slide-banner">
+    <div class="slider">
+    </div>
+    <div class="over-lay">
+                    <div class="navibar">
+                            <div class="logos">
+
+                    <div class="header">
+<input class="menu-btn" type="checkbox" id="menu-btn" />
+<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+<ul class="menu">
+    <img src="logo_header.png" class="logo-img">
+
+                          <li><a href="#">Home</i></a></li>
+                          <li><a href="store.php">Store</a></li>
+                          <li><a href="cart.php">Cart</a></li>
+                          <li><a href="order.php">Order</i></a></li>
+                          <li><a href="account.php"><i class="fa-regular fa-circle-user"></i></a></li>
+</ul>
+<div class="search-container">
+  <form action="/search" method="get">
+    <input class="search" id="searchleft" type="search" name="q" placeholder="Search">
+    <label class="button searchbutton" for="searchleft"><span class="mglass">&#9906;</span></label>
+  </form>
+</div>
+            </div>    
+
+
+
+            <div class="request-form">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <h4>Request a call back right now ?</h4>
+                      <span>Reach out to us.</span>
+                    </div>
+                    <div class="col-md-4">
+                      <a href="contact.php" class="border-button">Contact Us</a>
+          <br>
+          <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</body>
+<script src="../index.js"></script>
+<script>
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+</script>
+</html>
