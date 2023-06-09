@@ -190,70 +190,7 @@ left:10px;
 
 
 
-.search-container {
-	position: relative;
-	display: inline-block;
-	margin: 4px 2px;
-	height: 50px;
-	width: 50px;
-	vertical-align: bottom;
-}
 
-.mglass {
-	display: inline-block;
-	pointer-events: none;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-}
-
-.searchbutton {
-	position: absolute;
-	font-size: 22px;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-.search:focus + .searchbutton {
-	transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	-webkit-transition-duration: 0.4s;
-	-o-transition-duration: 0.4s;
-	background-color: white;
-	color: black;
-}
-
-.search {
-	position: absolute;
-	left: 49px; /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
-	background-color: white;
-	outline: none;
-	border: none;
-	padding: 0;
-	width: 0;
-	height: 100%;
-	z-index: 10;
-	transition-duration: 0.4s;
-	-moz-transition-duration: 0.4s;
-	-webkit-transition-duration: 0.4s;
-	-o-transition-duration: 0.4s;
-}
-
-.search:focus {
-	width: 363px; /* Bar width+1px */
-	padding: 0 16px 0 0;
-}
-
-.expandright {
-	left: auto;
-	right: 49px; /* Button width-1px */
-}
-
-.expandright:focus {
-	padding: 0 0 0 16px;
-}
 </style>
 <body>
   <div id="preloader">
@@ -261,23 +198,21 @@ left:10px;
         <div class="animation-preloader">
           
             <div class="txt-loading">
-                <span preloader-text="S" class="characters">S</span>
+                <span preloader-text="M" class="characters">M</span>
+                
+                <span preloader-text="F" class="characters">F</span>
                 
                 <span preloader-text="A" class="characters">A</span>
                 
-                <span preloader-text="N" class="characters">N</span>
+                <span preloader-text="C" class="characters">C</span>
                 
-                <span preloader-text="Z" class="characters">Z</span>
+                <span preloader-text="L" class="characters">L</span>
                 
-                <span preloader-text="S" class="characters">S</span>
+                <span preloader-text="U" class="characters">U</span>
                 
-                <span preloader-text="T" class="characters">T</span>
-                
-                <span preloader-text="O" class="characters">O</span>
+                <span preloader-text="B" class="characters">B</span>
 
-                <span preloader-text="R" class="characters">R</span>
-		    
-		 <span preloader-text="E" class="characters">E</span>
+                <span preloader-text="S" class="characters">S</span>
             </div>
         </div>	
         <div class="loader-section section-left"></div>
@@ -298,19 +233,53 @@ left:10px;
     <img src="logo_header.png" class="logo-img">
 
                           <li><a href="#">Home</i></a></li>
-                          <li><a href="store.php">Store</a></li>
-                          <li><a href="cart.php">Cart</a></li>
-                          <li><a href="order.php">Order</i></a></li>
-                          <li><a href=".../index.html"><i class="fa-regular fa-circle-user"></i></a></li>
+                          <li><a href="store.html">Store</a></li>
+                          <li><a href="cart.html">Cart</a></li>
+                          <li><a href="order.html">Order</i></a></li>
+                          <li><a href="/index.html"><i class="fa-regular fa-circle-user"></i></a></li>
 </ul>
-<div class="search-container">
-  <form action="/search" method="get">
-    <input class="search" id="searchleft" type="search" name="q" placeholder="Search">
-    <label class="button searchbutton" for="searchleft"><span class="mglass">&#9906;</span></label>
-  </form>
-</div>
-            </div>    
 
+
+
+            </div>    
+            <div class="content">
+              <div id="slide">
+              <ul class="slide-ul">
+                                  <li>
+                                              <div class="container-slider">
+                                                          <h1> RESPONSIVE TEMPLATES</h1>
+                        <h3> Find the best templates that are adjustable  and responsive designs that are customizable. lets go shop</h3>
+              <br>
+              <a href="store.php" class="button">Shop Now <i class="fa-solid fa-cart-shopping"></i></a>
+                                              </div>
+                                  </li>
+                                    <li>
+                                                <div class="container-slider">
+              <h1> FLASH SALES</h1>
+                        <h3>Get the biggest discoounts on our hourly, daily and weekly flashsales. Lets go shop , what are you waiting for?</h3>                             
+              <br>
+              <a href="flash-sale.php" class="button">Flash Sales  <i class="fa-solid fa-tag"></i></a>
+                </div>
+                                  </li>
+                                    <li>
+                                                <div class="container-slider">
+              <h1> SPIN AND WIN</h1>
+                        <h3>Spin the wheel, get a free template. First three trials are free!</h3>                 
+              <br>
+              <a href="spin.php" class="button">Spin <i class="fa-solid fa-arrows-spin"></i></i></a>
+                            </div>
+                                  </li> 
+                                    <li>
+                                              <div class="container-slider">
+              <h1> GOT A COMPLAINT OR CONCERN?</h1>
+                        <h3> Reach out to us right now with our contact details as soon as you can, we are here for you</h3>                         
+              <br>
+              <a href="contact.php" class="button">Contact Us  <i class="fa-solid fa-phone"></i></a>
+                  </div>
+                                  </li>
+              </ul>
+              </div>
+              </div>
 
 
             <div class="request-form">
@@ -330,6 +299,7 @@ left:10px;
               </div>
 </body>
 <script src="index.js"></script>
+<script src="header.js"></script>
 <script>
     const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -350,4 +320,5 @@ function closeMenu() {
     navMenu.classList.remove("active");
 }
 </script>
+
 </html>
